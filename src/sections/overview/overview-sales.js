@@ -146,7 +146,7 @@ export const OverviewSales = (props) => {
           )}
           size="small"
         >
-          Overview
+          yana
         </Button>
       </CardActions>
     </Card>
