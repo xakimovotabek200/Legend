@@ -1,11 +1,13 @@
 import PropTypes from 'prop-types';
+import Chip from "@mui/material/Chip";
+import Stack from "@mui/material/Stack";
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import { format } from 'date-fns';
 import {
   Avatar,
   Box,
   Card,
   Checkbox,
-  Stack,
   Table,
   TableBody,
   TableCell,
@@ -34,6 +36,10 @@ export const CustomersTable = (props) => {
 
   const selectedSome = (selected.length > 0) && (selected.length < items.length);
   const selectedAll = (items.length > 0) && (selected.length === items.length);
+
+  const handleDelete = () => {
+    console.info('You clicked the delete icon.');
+  };
 
   return (
     <Card>
@@ -68,7 +74,9 @@ export const CustomersTable = (props) => {
                   Phone
                 </TableCell>
                 <TableCell>
-                  Signed Up
+                  Abdullajon
+                </TableCell>
+                <TableCell>
                 </TableCell>
               </TableRow>
             </TableHead>
@@ -78,11 +86,7 @@ export const CustomersTable = (props) => {
                 const createdAt = format(customer.createdAt, 'dd/MM/yyyy');
 
                 return (
-                  <TableRow
-                    hover
-                    key={customer.id}
-                    selected={isSelected}
-                  >
+                  <TableRow hover key={customer.id} selected={isSelected}>
                     <TableCell padding="checkbox">
                       <Checkbox
                         checked={isSelected}
@@ -96,30 +100,21 @@ export const CustomersTable = (props) => {
                       />
                     </TableCell>
                     <TableCell>
-                      <Stack
-                        alignItems="center"
-                        direction="row"
-                        spacing={2}
-                      >
-                        <Avatar src={customer.avatar}>
-                          {getInitials(customer.name)}
-                        </Avatar>
-                        <Typography variant="subtitle2">
-                          {customer.name}
-                        </Typography>
+                      <Stack alignItems="center" direction="row" spacing={2}>
+                        <Avatar src={customer.avatar}>{getInitials(customer.name)}</Avatar>
+                        <Typography variant="subtitle2">{customer.name}</Typography>
                       </Stack>
                     </TableCell>
-                    <TableCell>
-                      {customer.email}
-                    </TableCell>
+                    <TableCell>{customer.email}</TableCell>
                     <TableCell>
                       {customer.address.city}, {customer.address.state}, {customer.address.country}
                     </TableCell>
+                    <TableCell>{customer.phone}</TableCell>
+                    <TableCell>{createdAt}</TableCell>
                     <TableCell>
-                      {customer.phone}
-                    </TableCell>
-                    <TableCell>
-                      {createdAt}
+                      <Stack direction="row" spacing={1}>
+                        <DeleteForeverIcon style={{color: "red"}}/>
+                      </Stack>
                     </TableCell>
                   </TableRow>
                 );
