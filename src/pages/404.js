@@ -55,7 +55,7 @@ const Page = () => (
             color="text.secondary"
             variant="body1"
           >
-            You either tried some shady route or you came here by mistake.
+            You either tried some shady trg or you came here by mistake.
             Whichever it is, try using the navigation
           </Typography>
           <Button
