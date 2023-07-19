@@ -46,7 +46,6 @@ export const Layout = (props) => {
                 width: 32,
               }}
             >
-              <Logo />
             </Box>  
           </Box>
           {children}
@@ -76,7 +75,7 @@ export const Layout = (props) => {
               }}
               variant="h1"
             >
-              Legend{" "}
+              <Logo/>
               <Box component="a" sx={{ color: "#15B79E" }} target="_blank">
                 Ishoncli tanlov
               </Box>
