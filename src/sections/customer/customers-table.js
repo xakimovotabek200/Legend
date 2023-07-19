@@ -1,8 +1,8 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
-import { format } from 'date-fns';
+import { format } from "date-fns";
 import {
   Avatar,
   Box,
@@ -14,10 +14,10 @@ import {
   TableHead,
   TablePagination,
   TableRow,
-  Typography
-} from '@mui/material';
-import { Scrollbar } from 'src/components/scrollbar';
-import { getInitials } from 'src/utils/get-initials';
+  Typography,
+} from "@mui/material";
+import { Scrollbar } from "src/components/scrollbar";
+import { getInitials } from "src/utils/get-initials";
 
 export const CustomersTable = (props) => {
   const {
@@ -31,14 +31,14 @@ export const CustomersTable = (props) => {
     onSelectOne,
     page = 0,
     rowsPerPage = 0,
-    selected = []
+    selected = [],
   } = props;
 
-  const selectedSome = (selected.length > 0) && (selected.length < items.length);
-  const selectedAll = (items.length > 0) && (selected.length === items.length);
+  const selectedSome = selected.length > 0 && selected.length < items.length;
+  const selectedAll = items.length > 0 && selected.length === items.length;
 
   const handleDelete = () => {
-    console.info('You clicked the delete icon.');
+    console.info("You clicked the delete icon.");
   };
 
   return (
@@ -61,29 +61,18 @@ export const CustomersTable = (props) => {
                     }}
                   />
                 </TableCell>
-                <TableCell>
-                  Name
-                </TableCell>
-                <TableCell>
-                  Email
-                </TableCell>
-                <TableCell>
-                  Location
-                </TableCell>
-                <TableCell>
-                  Phone
-                </TableCell>
-                <TableCell>
-                  Abdullajon
-                </TableCell>
-                <TableCell>
-                </TableCell>
+                <TableCell>Name</TableCell>
+                <TableCell>Email</TableCell>
+                <TableCell>Location</TableCell>
+                <TableCell>Phone</TableCell>
+                <TableCell>Abdullajon</TableCell>
+                <TableCell></TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {items.map((customer) => {
                 const isSelected = selected.includes(customer.id);
-                const createdAt = format(customer.createdAt, 'dd/MM/yyyy');
+                const createdAt = format(customer.createdAt, "dd/MM/yyyy");
 
                 return (
                   <TableRow hover key={customer.id} selected={isSelected}>
@@ -113,7 +102,7 @@ export const CustomersTable = (props) => {
                     <TableCell>{createdAt}</TableCell>
                     <TableCell>
                       <Stack direction="row" spacing={1}>
-                        <DeleteForeverIcon style={{color: "red"}}/>
+                        <DeleteForeverIcon style={{ color: "red" }} />
                       </Stack>
                     </TableCell>
                   </TableRow>
@@ -147,5 +136,5 @@ CustomersTable.propTypes = {
   onSelectOne: PropTypes.func,
   page: PropTypes.number,
   rowsPerPage: PropTypes.number,
-  selected: PropTypes.array
+  selected: PropTypes.array,
 };

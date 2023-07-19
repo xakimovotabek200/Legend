@@ -7,7 +7,7 @@ import {
   Tab,
   Tabs,
   TextField,
-  Typography,
+  Typography
 } from "@mui/material";
 import { useFormik } from "formik";
 import Head from "next/head";
@@ -120,7 +120,7 @@ const Page = () => {
                 <Button fullWidth size="large" sx={{ mt: 3 }} type="submit" variant="contained">
                   Continue
                 </Button>
-
+              
                 <Alert color="primary" severity="info" sx={{ mt: 3 }}>
                   <div>
                     You can use <b>de mo@devias.io</b> and password <b>Password123!</b>
