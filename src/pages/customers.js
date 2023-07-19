@@ -4,13 +4,15 @@ import { subDays, subHours } from 'date-fns';
 import ArrowDownOnSquareIcon from '@heroicons/react/24/solid/ArrowDownOnSquareIcon';
 import ArrowUpOnSquareIcon from '@heroicons/react/24/solid/ArrowUpOnSquareIcon';
 import PlusIcon from '@heroicons/react/24/solid/PlusIcon';
-import { Box, Button, Container, Stack, SvgIcon, Typography } from '@mui/material';
+import { Box, Button, Container, SvgIcon, Typography } from '@mui/material';
 import { useSelection } from 'src/hooks/use-selection';
 import { Layout as DashboardLayout } from 'src/layouts/dashboard/layout';
 import { CustomersTable } from 'src/sections/customer/customers-table';
 import { CustomersSearch } from 'src/sections/customer/customers-search';
 import { applyPagination } from 'src/utils/apply-pagination';
+import Stack from '@mui/material/Stack';
 import TableTop from './tabletop'
+import Chip from '@mui/material/Chip';
 
 const now = new Date();
 
@@ -174,7 +176,9 @@ const useCustomerIds = (customers) => {
     [customers]
   );
 };
-
+  const handleDelete = () => {
+    console.info('You clicked the delete icon.');
+  };
 const Page = () => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
@@ -250,11 +254,6 @@ const Page = () => {
               </Stack>
               <div>
                 <Button
-                  startIcon={(
-                    <SvgIcon fontSize="small">
-                      <PlusIcon />
-                    </SvgIcon>
-                  )}
                   variant="contained"
                 >
                   Add
@@ -277,6 +276,7 @@ const Page = () => {
               selected={customersSelection.selected}
             />
           </Stack>
+          
         </Container>
       </Box>
     </>
@@ -286,6 +286,7 @@ const Page = () => {
 Page.getLayout = (page) => (
   <DashboardLayout>
     {page}
+
   </DashboardLayout>
 );
 
