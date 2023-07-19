@@ -9,7 +9,7 @@ import { SvgIcon } from "@mui/material";
 
 export const items = [
   {
-    title: "Overview",
+    title: "Umumiy koʻrinish",
     path: "/",
     icon: (
       <SvgIcon fontSize="small">
@@ -18,7 +18,7 @@ export const items = [
     ),
   },
   {
-    title: "Customers",
+    title: "Xaridorlar",
     path: "/customers",
     icon: (
       <SvgIcon fontSize="small">
@@ -27,7 +27,7 @@ export const items = [
     ),
   },
   {
-    title: "Companies",
+    title: "Arizalar",
     path: "/companies",
     icon: (
       <SvgIcon fontSize="small">
@@ -36,7 +36,7 @@ export const items = [
     ),
   },
   {
-    title: "Account",
+    title: "Hisob",
     path: "/account",
     icon: (
       <SvgIcon fontSize="small">
@@ -45,7 +45,7 @@ export const items = [
     ),
   },
   {
-    title: "Settings",
+    title: "Sozlamalar",
     path: "/settings",
     icon: (
       <SvgIcon fontSize="small">
