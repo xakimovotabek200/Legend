@@ -12,7 +12,7 @@ export const Table = ({ rows, deleteRow, editRow }) => {
             <th>Page</th>
             <th className={styles.expand}>Description</th>
             <th>Statuss`</th>
-            <th>Actions</th>
+            <th>Actionlar</th>
           </tr>
         </thead>
         <tbody>
